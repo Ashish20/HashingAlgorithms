@@ -4,7 +4,10 @@ import java.util.*;
 
 public class HashChaining {
 
-	private int initialSize = 255;
+	private int initialSize = 199;
+	private int a = 3;
+	private int b = 42;
+	private int p = 211;
 
 	HashList hashList[];
 
@@ -16,10 +19,18 @@ public class HashChaining {
 			hashList[i] = null;
 		}
 	}
-
+	
+	
+//	hash function used in scenario 1 and 2 in report
+//	public int hashFunction(int key) {
+//
+//		return key % initialSize;
+//	}
+	
 	public int hashFunction(int key) {
 
-		return key % initialSize;
+		return ((a*key + b) % p)%initialSize;
+		
 	}
 
 	public void set(int key, int value) {
