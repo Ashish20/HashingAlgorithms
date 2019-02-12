@@ -53,7 +53,7 @@ public class LinearProbe {
 		int i =0;
 		while (hashElement[index] != null && hashElement[index].getKey() != -1 && hashElement[index].getKey() != key) {
 			++i;
-			index = hashFunction(key + i);
+			index = (hashFunction(key) +i)%hashSize;
 //			System.out.println("Index - " + index);
 		}
 
@@ -69,7 +69,7 @@ public class LinearProbe {
 		while (hashElement[index] != null && hashElement[index].getKey() != -1 && hashElement[index].getKey() != key) {
 
 			++i;
-			index = hashFunction(key + i);
+			index = (hashFunction(key) + i)%hashSize;
 			if(index == start) {
 				return null;
 			}
@@ -88,7 +88,7 @@ public class LinearProbe {
 		while (hashElement[index] != null && hashElement[index].getKey() != key) {
 
 			++i;
-			index = hashFunction(key+i);
+			index = (hashFunction(key) + i)%hashSize;
 			if(index == start) {
 				flag = true;
 				break;

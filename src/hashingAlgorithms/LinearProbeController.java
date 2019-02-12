@@ -17,7 +17,7 @@ public class LinearProbeController {
 		for (int k = 0; k < noOfElements; k++) {
 			Random rand = new Random();
 			arr[k] = rand.nextInt(500);
-//			arr[k] =k; Data for 1st scenario
+//			arr[k] =k; //Data for 1st scenario
 		}
 		
 		System.out.println("======Setting 500 elements=======");
